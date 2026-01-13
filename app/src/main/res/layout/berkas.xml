@@ -108,7 +108,7 @@
              android:layout_width="match_parent"
              ads:adSize="BANNER"
              android:layout_margin="10dp"
-             ads:adUnitId="ca-app-pub-2534537144295464/4590734621"
+             ads:adUnitId="ca-app-pub-1628895511992300/6312494921"
              android:id="@+id/iklan" />
 
         <LinearLayout
