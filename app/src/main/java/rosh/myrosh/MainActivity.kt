@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
         RewardedAd.load(
             this,
-            "ca-app-pub-2534537144295464/6604192860",
+            "ca-app-pub-1628895511992300/5961141130",
             AdRequest.Builder().build(),
             object : RewardedAdLoadCallback() {
                 override fun onAdLoaded(ad: RewardedAd) {
