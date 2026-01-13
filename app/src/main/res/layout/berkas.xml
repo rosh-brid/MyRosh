@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:ads="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="#000000"
+     android:orientation="horizontal"
+     android:id="@+id/coordinator">
+
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="300dp"
+         android:visibility="gone"
+         android:background="#333333"
+         android:orientation="vertical"
+         android:id="@+id/liner">
+
+        <LinearLayout
+             android:layout_height="40dp"
+             android:layout_width="match_parent"
+             android:gravity="center_vertical">
+
+            <TextView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="50dp"
+                 android:gravity="center"
+                 android:background="#ff0000"
+                 android:textColor="#ffffff"
+                 android:layout_marginStart="10dp"
+                 android:id="@+id/keluar"
+                 android:text="X" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="30dp"
+                 android:src="@drawable/sd_folder"
+                 android:id="@+id/sd" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="30dp"
+                 android:src="@drawable/apk_folder"
+                 android:id="@+id/apk" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="30dp"
+                 android:src="@drawable/apk_folder"
+                 android:id="@+id/apk_sd" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:orientation="vertical">
+
+        <LinearLayout
+             android:layout_height="40dp"
+             android:layout_width="match_parent"
+             android:gravity="center_vertical"
+             android:background="#333333">
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="50dp"
+                 android:src="@drawable/nav"
+                 android:layout_marginStart="10dp"
+                 android:id="@+id/nav" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="30dp"
+                 android:id="@+id/baru" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="30dp"
+                 android:id="@+id/cari" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="30dp"
+                 android:id="@+id/urut" />
+
+        </LinearLayout>
+
+        <com.google.android.gms.ads.AdView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             ads:adSize="BANNER"
+             android:layout_margin="10dp"
+             ads:adUnitId="ca-app-pub-2534537144295464/4590734621"
+             android:id="@+id/iklan" />
+
+        <LinearLayout
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp"
+             android:orientation="vertical">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:background="#333333"
+                 android:layout_margin="3dp"
+                 android:padding="3dp"
+                 android:textColor="#ffffff"
+                 android:textIsSelectable="true"
+                 android:textStyle="italic"
+                 android:id="@+id/jalur"
+                 android:text="/" />
+
+            <ScrollView
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent">
+
+                <GridLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:columnCount="3"
+                     android:layout_gravity="center_horizontal"
+                     android:id="@+id/grid">
+
+                </GridLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

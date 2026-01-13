@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:ads="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="#000000"
+     android:orientation="horizontal">
+
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="300dp"
+         android:visibility="gone"
+         android:background="#333333"
+         android:orientation="vertical"
+         android:id="@+id/liner">
+
+        <LinearLayout
+             android:layout_height="40dp"
+             android:layout_width="match_parent"
+             android:gravity="center_vertical">
+
+            <TextView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="50dp"
+                 android:gravity="center"
+                 android:background="#ff0000"
+                 android:layout_marginStart="10dp"
+                 android:id="@+id/keluar"
+                 android:text="X" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp"
+             android:orientation="vertical">
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center"
+                 android:background="#555555"
+                 android:padding="5dp"
+                 android:layout_margin="10dp"
+                 android:id="@+id/saldo">
+
+                <ImageView
+                     android:layout_height="30dp"
+                     android:layout_width="30dp"
+                     android:src="@drawable/uang"
+                     android:layout_marginEnd="10dp" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_marginEnd="20dp"
+                     android:textColor="#ffffff"
+                     android:text="My Point" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:orientation="vertical">
+
+        <LinearLayout
+             android:layout_height="40dp"
+             android:layout_width="match_parent"
+             android:gravity="center_vertical"
+             android:background="#444444">
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:src="@drawable/nav"
+                 android:layout_marginEnd="50dp"
+                 android:layout_marginStart="10dp"
+                 android:id="@+id/nav" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:layout_marginEnd="30dp"
+                 android:textColor="#ff00ff"
+                 android:textStyle="bold"
+                 android:text="MyRosh" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:src="@drawable/sd_tolak"
+                 android:id="@+id/izin" />
+
+        </LinearLayout>
+
+        <com.google.android.gms.ads.AdView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             ads:adSize="BANNER"
+             android:layout_margin="10dp"
+             ads:adUnitId="ca-app-pub-1628895511992300/6312494921"
+             android:id="@+id/iklan" />
+
+        <LinearLayout
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp">
+
+            <ScrollView
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent">
+
+                <GridLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_gravity="center_horizontal"
+                     android:columnCount="2">
+
+                    <LinearLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:gravity="center"
+                         android:background="#333333"
+                         android:layout_margin="15dp"
+                         android:padding="10dp"
+                         android:orientation="vertical"
+                         android:id="@+id/berkas">
+
+                        <ImageView
+                             android:layout_height="40dp"
+                             android:layout_width="40dp"
+                             android:src="@drawable/berkas"
+                             android:layout_margin="10dp" />
+
+                        <TextView
+                             android:layout_height="wrap_content"
+                             android:layout_width="75dp"
+                             android:gravity="center"
+                             android:textColor="#ffffff"
+                             android:textStyle="italic"
+                             android:text="Berkas" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:gravity="center"
+                         android:background="#333333"
+                         android:layout_margin="15dp"
+                         android:padding="10dp"
+                         android:orientation="vertical"
+                         android:id="@+id/terminal">
+
+                        <ImageView
+                             android:layout_height="40dp"
+                             android:layout_width="40dp"
+                             android:src="@drawable/terminal"
+                             android:layout_margin="10dp" />
+
+                        <TextView
+                             android:layout_height="wrap_content"
+                             android:layout_width="75dp"
+                             android:gravity="center"
+                             android:textColor="#ffffff"
+                             android:textStyle="italic"
+                             android:text="Terminal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:gravity="center"
+                         android:background="#333333"
+                         android:layout_margin="15dp"
+                         android:padding="10dp"
+                         android:orientation="vertical"
+                         android:id="@+id/browser">
+
+                        <ImageView
+                             android:layout_height="40dp"
+                             android:layout_width="40dp"
+                             android:src="@drawable/browser"
+                             android:layout_margin="10dp" />
+
+                        <TextView
+                             android:layout_height="wrap_content"
+                             android:layout_width="75dp"
+                             android:gravity="center"
+                             android:textColor="#ffffff"
+                             android:textStyle="italic"
+                             android:text="Browser" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:gravity="center"
+                         android:background="#333333"
+                         android:layout_margin="15dp"
+                         android:padding="10dp"
+                         android:orientation="vertical"
+                         android:id="@+id/editor">
+
+                        <ImageView
+                             android:layout_height="40dp"
+                             android:layout_width="40dp"
+                             android:src="@drawable/editor"
+                             android:layout_margin="10dp" />
+
+                        <TextView
+                             android:layout_height="wrap_content"
+                             android:layout_width="75dp"
+                             android:gravity="center"
+                             android:textColor="#ffffff"
+                             android:textStyle="italic"
+                             android:text="Editor" />
+
+                    </LinearLayout>
+
+                </GridLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

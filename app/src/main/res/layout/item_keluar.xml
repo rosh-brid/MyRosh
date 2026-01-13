@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:background="#999999"
+     android:orientation="vertical">
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:gravity="center"
+         android:background="#777777"
+         android:padding="10dp"
+         android:layout_margin="10dp"
+         android:textSize="17sp"
+         android:textColor="#000000"
+         android:textStyle="bold"
+         android:text="Peringatan !!" />
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:layout_margin="20dp"
+         android:textSize="14sp"
+         android:textColor="#000000"
+         android:id="@+id/pesan" />
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:gravity="end"
+         android:background="#777777"
+         android:padding="5dp"
+         android:layout_margin="10dp">
+
+        <TextView
+             android:layout_height="30dp"
+             android:layout_width="50dp"
+             android:layout_marginEnd="20dp"
+             android:gravity="center"
+             android:background="#fffaaa"
+             android:textColor="#000000"
+             android:id="@+id/batal"
+             android:text="BATAL" />
+
+        <TextView
+             android:layout_height="30dp"
+             android:layout_width="50dp"
+             android:layout_marginEnd="20dp"
+             android:gravity="center"
+             android:background="#fffaaa"
+             android:textColor="#000000"
+             android:id="@+id/oke"
+             android:text="OKE" />
+
+    </LinearLayout>
+
+</LinearLayout>
