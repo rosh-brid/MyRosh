@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:ads="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:id="@+id/coordinator">
+
+    <androidx.camera.view.PreviewView
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:id="@+id/kamera" />
+
+    <com.google.android.gms.ads.AdView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         ads:adSize="BANNER"
+         android:layout_margin="10dp"
+         ads:adUnitId="ca-app-pub-2534537144295464/4309541326"
+         android:id="@+id/iklan" />
+
+    <ImageView
+         android:layout_height="50dp"
+         android:layout_width="50dp"
+         android:layout_marginBottom="10dp"
+         android:src="@drawable/gambar"
+         android:layout_marginStart="10dp"
+         android:layout_gravity="bottom | start"
+         android:id="@+id/galeri" />
+
+    <ImageView
+         android:layout_height="50dp"
+         android:layout_width="50dp"
+         android:layout_marginBottom="10dp"
+         android:src="@drawable/balik_kamera"
+         android:layout_marginEnd="10dp"
+         android:layout_gravity="bottom | end"
+         android:id="@+id/balik" />
+
+    <ImageView
+         android:layout_height="80dp"
+         android:layout_width="80dp"
+         android:layout_marginBottom="50dp"
+         android:src="@drawable/ambil_gambar"
+         android:id="@+id/ambil"
+         android:layout_gravity="center_horizontal | bottom" />
+
+</FrameLayout>

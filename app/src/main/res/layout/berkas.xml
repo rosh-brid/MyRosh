@@ -108,7 +108,7 @@
              android:layout_width="match_parent"
              ads:adSize="BANNER"
              android:layout_margin="10dp"
-             ads:adUnitId="ca-app-pub-1628895511992300/6312494921"
+             ads:adUnitId="ca-app-pub-2534537144295464/4309541326"
              android:id="@+id/iklan" />
 
         <LinearLayout
@@ -128,6 +128,60 @@
                  android:textStyle="italic"
                  android:id="@+id/jalur"
                  android:text="/" />
+
+            <LinearLayout
+                 android:layout_height="40dp"
+                 android:layout_width="match_parent"
+                 android:visibility="gone"
+                 android:background="#555555"
+                 android:gravity="center"
+                 android:layout_margin="5dp"
+                 android:id="@+id/lama">
+
+                <ImageView
+                     android:layout_height="30dp"
+                     android:layout_width="30dp"
+                     android:src="@drawable/salin"
+                     android:layout_marginEnd="20dp"
+                     android:id="@+id/salin" />
+
+                <ImageView
+                     android:layout_height="30dp"
+                     android:layout_width="30dp"
+                     android:src="@drawable/potong"
+                     android:layout_marginEnd="20dp"
+                     android:id="@+id/potong" />
+
+                <ImageView
+                     android:layout_height="30dp"
+                     android:layout_width="30dp"
+                     android:visibility="gone"
+                     android:src="@drawable/tempel"
+                     android:layout_marginEnd="20dp"
+                     android:id="@+id/tempel" />
+
+                <ImageView
+                     android:layout_height="30dp"
+                     android:layout_width="30dp"
+                     android:src="@drawable/hapus"
+                     android:layout_marginEnd="20dp"
+                     android:id="@+id/hapus" />
+
+                <ImageView
+                     android:layout_height="30dp"
+                     android:layout_width="30dp"
+                     android:src="@drawable/rename"
+                     android:layout_marginEnd="20dp"
+                     android:id="@+id/rename" />
+
+                <ImageView
+                     android:layout_height="30dp"
+                     android:layout_width="30dp"
+                     android:src="@drawable/lainya"
+                     android:layout_marginEnd="20dp"
+                     android:id="@+id/lainya" />
+
+            </LinearLayout>
 
             <ScrollView
                  android:layout_height="match_parent"

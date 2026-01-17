@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
      xmlns:android="http://schemas.android.com/apk/res/android"
-     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:ads="http://schemas.android.com/apk/res-auto"
      android:layout_height="match_parent"
      android:layout_width="match_parent"
      android:id="@+id/coordinator">
@@ -11,7 +11,71 @@
          android:layout_width="300dp"
          android:visibility="gone"
          android:background="#333333"
+         android:orientation="vertical"
          android:id="@+id/liner">
+
+        <LinearLayout
+             android:layout_height="40dp"
+             android:layout_width="match_parent"
+             android:gravity="center_vertical">
+
+            <TextView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="50dp"
+                 android:gravity="center"
+                 android:background="#ff0000"
+                 android:layout_marginStart="10dp"
+                 android:id="@+id/keluar"
+                 android:text="X" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:src="@drawable/google"
+                 android:layout_marginEnd="30dp"
+                 android:id="@+id/google" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:src="@drawable/duck"
+                 android:layout_marginEnd="30dp"
+                 android:id="@+id/duck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp"
+             android:orientation="vertical">
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center"
+                 android:background="@drawable/bg_kotak"
+                 android:padding="10dp"
+                 android:layout_margin="20dp"
+                 android:backgroundTint="#555555"
+                 android:textColor="#ffffff"
+                 android:id="@+id/unduhan"
+                 android:text="Unduhan" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center"
+                 android:background="@drawable/bg_kotak"
+                 android:padding="10dp"
+                 android:layout_margin="20dp"
+                 android:backgroundTint="#555555"
+                 android:textColor="#ffffff"
+                 android:id="@+id/tes_jaringan"
+                 android:text="Speed Test" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -20,6 +84,14 @@
          android:layout_width="match_parent"
          android:background="#000000"
          android:orientation="vertical">
+
+        <com.google.android.gms.ads.AdView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             ads:adSize="BANNER"
+             android:layout_margin="10dp"
+             ads:adUnitId="ca-app-pub-2534537144295464/4309541326"
+             android:id="@+id/iklan" />
 
         <LinearLayout
              android:layout_height="40dp"
@@ -61,7 +133,7 @@
         </LinearLayout>
 
         <FrameLayout
-             android:layout_height="10dp"
+             android:layout_height="15dp"
              android:layout_width="match_parent"
              android:visibility="gone"
              android:background="#999999"
@@ -81,7 +153,7 @@
             <TextView
                  android:layout_height="wrap_content"
                  android:layout_width="wrap_content"
-                 android:textSize="10sp"
+                 android:textSize="8sp"
                  android:textColor="#00ff00"
                  android:id="@+id/persen"
                  android:layout_gravity="center"

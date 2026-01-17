@@ -58,7 +58,31 @@
                      android:layout_width="wrap_content"
                      android:layout_marginEnd="20dp"
                      android:textColor="#ffffff"
-                     android:text="My Point" />
+                     android:text="Poin Saya" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:gravity="center"
+                 android:background="#555555"
+                 android:padding="5dp"
+                 android:layout_margin="10dp"
+                 android:id="@+id/pengaturan">
+
+                <ImageView
+                     android:layout_height="30dp"
+                     android:layout_width="30dp"
+                     android:src="@drawable/pengaturan"
+                     android:layout_marginEnd="10dp" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_marginEnd="20dp"
+                     android:textColor="#ffffff"
+                     android:text="Pengaturan" />
 
             </LinearLayout>
 
@@ -106,7 +130,7 @@
              android:layout_width="match_parent"
              ads:adSize="BANNER"
              android:layout_margin="10dp"
-             ads:adUnitId="ca-app-pub-1628895511992300/6312494921"
+             ads:adUnitId="ca-app-pub-2534537144295464/4309541326"
              android:id="@+id/iklan" />
 
         <LinearLayout
@@ -129,7 +153,7 @@
                          android:layout_width="wrap_content"
                          android:gravity="center"
                          android:background="#333333"
-                         android:layout_margin="15dp"
+                         android:layout_margin="20dp"
                          android:padding="10dp"
                          android:orientation="vertical"
                          android:id="@+id/berkas">
@@ -155,7 +179,33 @@
                          android:layout_width="wrap_content"
                          android:gravity="center"
                          android:background="#333333"
-                         android:layout_margin="15dp"
+                         android:layout_margin="20dp"
+                         android:padding="10dp"
+                         android:orientation="vertical"
+                         android:id="@+id/galeri">
+
+                        <ImageView
+                             android:layout_height="40dp"
+                             android:layout_width="40dp"
+                             android:src="@drawable/gambar"
+                             android:layout_margin="10dp" />
+
+                        <TextView
+                             android:layout_height="wrap_content"
+                             android:layout_width="75dp"
+                             android:gravity="center"
+                             android:textColor="#ffffff"
+                             android:textStyle="italic"
+                             android:text="Galeri" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:gravity="center"
+                         android:background="#333333"
+                         android:layout_margin="20dp"
                          android:padding="10dp"
                          android:orientation="vertical"
                          android:id="@+id/terminal">
@@ -181,7 +231,7 @@
                          android:layout_width="wrap_content"
                          android:gravity="center"
                          android:background="#333333"
-                         android:layout_margin="15dp"
+                         android:layout_margin="20dp"
                          android:padding="10dp"
                          android:orientation="vertical"
                          android:id="@+id/browser">
@@ -207,7 +257,7 @@
                          android:layout_width="wrap_content"
                          android:gravity="center"
                          android:background="#333333"
-                         android:layout_margin="15dp"
+                         android:layout_margin="20dp"
                          android:padding="10dp"
                          android:orientation="vertical"
                          android:id="@+id/editor">
@@ -225,6 +275,32 @@
                              android:textColor="#ffffff"
                              android:textStyle="italic"
                              android:text="Editor" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                         android:layout_height="wrap_content"
+                         android:layout_width="wrap_content"
+                         android:gravity="center"
+                         android:background="#333333"
+                         android:layout_margin="20dp"
+                         android:padding="10dp"
+                         android:orientation="vertical"
+                         android:id="@+id/kamera">
+
+                        <ImageView
+                             android:layout_height="40dp"
+                             android:layout_width="40dp"
+                             android:src="@drawable/kamera"
+                             android:layout_margin="10dp" />
+
+                        <TextView
+                             android:layout_height="wrap_content"
+                             android:layout_width="75dp"
+                             android:gravity="center"
+                             android:textColor="#ffffff"
+                             android:textStyle="italic"
+                             android:text="Kamera" />
 
                     </LinearLayout>
 
