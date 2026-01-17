@@ -1,11 +1,14 @@
 package rosh.myrosh
 
 import android.os.Bundle
-import android.view.View
-import android.webkit.WebChromeClient
-import android.webkit.WebView
+import android.view.*
+import android.view.inputmethod.EditorInfo
+import android.webkit.*
 import android.widget.*
-import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.*
+import androidx.core.widget.addTextChangedListener
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.rewarded.*
 
 class Browser : AppCompatActivity() {
 
@@ -22,6 +25,20 @@ class Browser : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.browser)
 
+        PasangId()
+        AturWeb()
+        Tombol()
+        AturInputTeks()
+        IkonNav()
+        IklanBanner()
+    }
+    
+    private fun IklanBanner() {
+        val iklan = findViewById<AdView>(R.id.iklan)
+        iklan.loadAd(AdRequest.Builder().build())
+    }
+
+    private fun PasangId() {
         web = findViewById(R.id.web)
         tulis = findViewById(R.id.tulis)
         liner = findViewById(R.id.liner)
@@ -30,18 +47,31 @@ class Browser : AppCompatActivity() {
         proses = findViewById(R.id.proses)
         gambar = findViewById(R.id.gambar_jalan)
         persen = findViewById(R.id.persen)
-
-        AturWeb()
-        Tombol()
-        IkonNav()
     }
 
     private fun AturWeb() {
-        web.settings.javaScriptEnabled = true
+        web.apply {
+            settings.apply {
+                javaScriptEnabled = true
+                domStorageEnabled = true
+                loadWithOverviewMode = true
+                useWideViewPort = true
+                builtInZoomControls = true
+                displayZoomControls = false
+                setSupportZoom(true)
+            }
 
-        web.webChromeClient = object : WebChromeClient() {
-            override fun onProgressChanged(view: WebView?, newProgress: Int) {
-                UpdateProgress(newProgress)
+            webViewClient = object : WebViewClient() {
+                override fun onPageFinished(view: WebView?, url: String?) {
+                    super.onPageFinished(view, url)
+                    tulis.setText(url)
+                }
+            }
+
+            webChromeClient = object : WebChromeClient() {
+                override fun onProgressChanged(view: WebView?, newProgress: Int) {
+                    UpdateProgress(newProgress)
+                }
             }
         }
 
@@ -49,11 +79,13 @@ class Browser : AppCompatActivity() {
     }
 
     private fun TelusuriWeb(target: String) {
-        if (!target.startsWith("http")) {
-            web.loadUrl("https://$target")
-        } else {
-            web.loadUrl(target)
+        val url = when {
+            target.startsWith("http://") || target.startsWith("https://") -> target
+            target.contains(".") -> "https://$target"
+            else -> "https://www.google.com/search?q=$target"
         }
+        web.loadUrl(url)
+        SembunyikanKeyboard()
     }
 
     private fun UpdateProgress(progress: Int) {
@@ -63,9 +95,11 @@ class Browser : AppCompatActivity() {
 
         proses.post {
             val maxWidth = proses.width
-            val params = gambar.layoutParams
-            params.width = maxWidth * progress / 100
-            gambar.layoutParams = params
+            if (maxWidth > 0) {
+                val params = gambar.layoutParams
+                params.width = maxWidth * progress / 100
+                gambar.layoutParams = params
+            }
         }
     }
 
@@ -78,9 +112,44 @@ class Browser : AppCompatActivity() {
         }
 
         nav.setOnClickListener {
-            liner.visibility =
-                if (liner.visibility == View.GONE) View.VISIBLE else View.GONE
+            liner.visibility = if (liner.visibility == View.GONE) { View.VISIBLE } else { View.GONE }
             IkonNav()
+        }
+        
+        findViewById<TextView>(R.id.keluar).setOnClickListener{
+            Keluar()
+        }
+        
+        findViewById<ImageView>(R.id.google).setOnClickListener{
+            val ganti = "https://www.google.com"
+            TelusuriWeb(ganti)
+            liner.visibility = View.GONE
+            IkonNav()
+        }
+        
+        findViewById<ImageView>(R.id.duck).setOnClickListener{
+            val ganti = "https://www.duckduckgo.com"
+            TelusuriWeb(ganti)
+            liner.visibility = View.GONE
+            IkonNav()
+        }
+        
+        findViewById<TextView>(R.id.unduhan).setOnClickListener{
+            Toast.makeText(this, "Belum Siap", Toast.LENGTH_SHORT).show()
+        }
+        
+        findViewById<TextView>(R.id.tes_jaringan).setOnClickListener{
+            Toast.makeText(this, "Belum Siap", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun AturInputTeks() {
+        tulis.setOnEditorActionListener { _, actionId, _ ->
+            if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_GO) {
+                val url = tulis.text.toString().trim()
+                if (url.isNotEmpty()) { TelusuriWeb(url) }
+                true
+            } else { false }
         }
     }
 
@@ -93,6 +162,12 @@ class Browser : AppCompatActivity() {
         )
     }
 
+    private fun SembunyikanKeyboard() {
+        tulis.clearFocus()
+        val imm = getSystemService(INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
+        imm.hideSoftInputFromWindow(tulis.windowToken, 0)
+    }
+
     override fun onBackPressed() {
         when {
             liner.visibility == View.VISIBLE -> {
@@ -100,7 +175,33 @@ class Browser : AppCompatActivity() {
                 IkonNav()
             }
             web.canGoBack() -> web.goBack()
-            else -> super.onBackPressed()
+            else -> Keluar()
         }
+    }
+    
+    private fun Keluar() {
+        val item = LayoutInflater.from(this).inflate(R.layout.item_keluar, null)
+
+        val dialog = AlertDialog.Builder(this)
+            .setView(item)
+            .create()
+        val pesan = item.findViewById<TextView>(R.id.pesan)
+        pesan.text = "Anda Akan Keluar Dari Browser"
+
+        item.findViewById<TextView>(R.id.batal).setOnClickListener {
+            dialog.dismiss()
+        }
+
+        item.findViewById<TextView>(R.id.oke).setOnClickListener {
+            dialog.dismiss()
+            finish()
+        }
+
+        dialog.show()
+    }
+
+    override fun onDestroy() {
+        web.destroy()
+        super.onDestroy()
     }
 }

@@ -1,6 +1,6 @@
 package rosh.myrosh
 
-import android.os.Bundle
+import android.os.*
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
@@ -11,12 +11,18 @@ import com.google.android.gms.ads.rewarded.*
 import java.io.File
 import android.content.*
 import android.net.*
+import android.Manifest
+import android.content.pm.PackageManager
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import android.provider.Settings
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var liner: LinearLayout
     private lateinit var nav: ImageView
     private lateinit var dompet: File
+    private lateinit var izin : ImageView
 
     private var iklanVideo: RewardedAd? = null
 
@@ -29,8 +35,8 @@ class MainActivity : AppCompatActivity() {
         liner = findViewById(R.id.liner)
         nav = findViewById(R.id.nav)
         dompet = File(getExternalFilesDir(null), "dompet.txt")
+        izin = findViewById(R.id.izin)
 
-        // pastikan dompet ada
         if (!dompet.exists()) {
             dompet.writeText("0")
         }
@@ -39,8 +45,6 @@ class MainActivity : AppCompatActivity() {
         IklanBanner()
         LoadRewarded()
     }
-
-    /* ================== IKLAN ================== */
 
     private fun IklanBanner() {
         val iklan = findViewById<AdView>(R.id.iklan)
@@ -55,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
         RewardedAd.load(
             this,
-            "ca-app-pub-1628895511992300/5961141130",
+            "ca-app-pub-2534537144295464/6604192860",
             AdRequest.Builder().build(),
             object : RewardedAdLoadCallback() {
                 override fun onAdLoaded(ad: RewardedAd) {
@@ -87,7 +91,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /* ================== SALDO ================== */
 
     private fun tambahSaldo(jumlah: Int) {
         val saldo = dompet.readText().toIntOrNull() ?: 0
@@ -106,7 +109,6 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    /* ================== UI ================== */
 
     private fun IkonNav() {
         nav.setImageResource(
@@ -156,6 +158,11 @@ class MainActivity : AppCompatActivity() {
                 if (liner.visibility == View.GONE) View.VISIBLE else View.GONE
             IkonNav()
         }
+        
+        izin.setOnClickListener{
+            if(BacaIzin()){ SdSudah() }
+            else{ IzinSd() }
+        }
 
         findViewById<LinearLayout>(R.id.saldo).setOnClickListener {
             Saldo()
@@ -172,14 +179,97 @@ class MainActivity : AppCompatActivity() {
         findViewById<LinearLayout>(R.id.editor).setOnClickListener {
             startActivity(Intent(this, Editor::class.java))
         }
+        
+        findViewById<LinearLayout>(R.id.kamera).setOnClickListener {
+            startActivity(Intent(this, Kamera::class.java))
+        }
     }
+    
+    private fun SdSudah() {
+        val item = LayoutInflater.from(this).inflate(R.layout.item_keluar, null)
 
-    /* ================== UTIL ================== */
+        val dialog = AlertDialog.Builder(this)
+            .setView(item)
+            .create()
+        val pesan = item.findViewById<TextView>(R.id.pesan)
+        pesan.text = "Izin Penyimpanan Sudah Diberikan"
+
+        item.findViewById<TextView>(R.id.batal).setOnClickListener {
+            dialog.dismiss()
+        }
+
+        item.findViewById<TextView>(R.id.oke).setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
+    }
 
     private fun adaInternet(): Boolean {
         val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val net = cm.activeNetwork ?: return false
         val caps = cm.getNetworkCapabilities(net) ?: return false
         return caps.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+    }
+    
+    private fun IkonIzin(){
+        izin.setImageResource(
+        if(BacaIzin()){ R.drawable.sd_terima }
+        else{R.drawable.sd_tolak}
+        )
+    }
+    
+    override fun onResume() {
+        super.onResume()
+        IkonIzin()
+    }
+    
+    private fun BacaIzin(): Boolean {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+        Environment.isExternalStorageManager()
+    } else {
+        ContextCompat.checkSelfPermission(
+            this,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+        ) == PackageManager.PERMISSION_GRANTED
+        }
+    }
+    
+    private fun IzinSd() {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) { IzinMengambang() }
+    else { BukaPengaturan() }
+    }
+    
+    private fun IzinMengambang() {
+    val izin = arrayOf(
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE
+        )
+        ActivityCompat.requestPermissions(this, izin, 100)
+    }
+    
+    private fun BukaPengaturan() {
+    try {
+        val intent = Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION)
+        intent.data = Uri.parse("package:$packageName")
+        startActivity(intent)
+    } catch (e: Exception) {
+        val intent = Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION)
+        startActivity(intent)
+    }
+    }
+    
+    private fun IzinKamera() {
+    if (ContextCompat.checkSelfPermission(
+            this,
+            Manifest.permission.CAMERA
+        ) != PackageManager.PERMISSION_GRANTED
+    ) {
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(Manifest.permission.CAMERA),
+            200
+        )
+    }
     }
 }
