@@ -1,25 +1,17 @@
 package rosh.myrosh
 
-import android.os.Bundle
+import android.os.*
 import android.view.*
-import android.view.inputmethod.EditorInfo
 import android.webkit.*
 import android.widget.*
 import androidx.appcompat.app.*
-import androidx.core.widget.addTextChangedListener
-import com.google.android.gms.ads.*
-import com.google.android.gms.ads.rewarded.*
 
 class Browser : AppCompatActivity() {
 
     private lateinit var web: WebView
-    private lateinit var tulis: EditText
-    private lateinit var liner: LinearLayout
     private lateinit var nav: ImageView
-
-    private lateinit var proses: FrameLayout
-    private lateinit var gambar: LinearLayout
-    private lateinit var persen: TextView
+    private lateinit var geser: LinearLayout
+    private lateinit var tulis: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,165 +20,69 @@ class Browser : AppCompatActivity() {
         PasangId()
         AturWeb()
         Tombol()
-        AturInputTeks()
-        IkonNav()
-        IklanBanner()
-    }
-    
-    private fun IklanBanner() {
-        val iklan = findViewById<AdView>(R.id.iklan)
-        iklan.loadAd(AdRequest.Builder().build())
     }
 
     private fun PasangId() {
         web = findViewById(R.id.web)
-        tulis = findViewById(R.id.tulis)
-        liner = findViewById(R.id.liner)
         nav = findViewById(R.id.nav)
-
-        proses = findViewById(R.id.proses)
-        gambar = findViewById(R.id.gambar_jalan)
-        persen = findViewById(R.id.persen)
+        geser = findViewById(R.id.geser)
+        tulis = findViewById(R.id.tulis)
     }
 
     private fun AturWeb() {
-        web.apply {
-            settings.apply {
-                javaScriptEnabled = true
-                domStorageEnabled = true
-                loadWithOverviewMode = true
-                useWideViewPort = true
-                builtInZoomControls = true
-                displayZoomControls = false
-                setSupportZoom(true)
-            }
+        web.settings.javaScriptEnabled = true
+        web.settings.domStorageEnabled = true
 
-            webViewClient = object : WebViewClient() {
-                override fun onPageFinished(view: WebView?, url: String?) {
-                    super.onPageFinished(view, url)
-                    tulis.setText(url)
-                }
-            }
+        web.webViewClient = WebViewClient()
 
-            webChromeClient = object : WebChromeClient() {
-                override fun onProgressChanged(view: WebView?, newProgress: Int) {
-                    UpdateProgress(newProgress)
-                }
+        web.webChromeClient = object : WebChromeClient() {
+            override fun onProgressChanged(view: WebView?, newProgress: Int) {
+                ProsesBar(newProgress)
             }
         }
 
         TelusuriWeb("https://www.google.com")
     }
 
-    private fun TelusuriWeb(target: String) {
-        val url = when {
-            target.startsWith("http://") || target.startsWith("https://") -> target
-            target.contains(".") -> "https://$target"
-            else -> "https://www.google.com/search?q=$target"
+    private fun ProsesBar(progress: Int) {
+    val proses = findViewById<FrameLayout>(R.id.proses)
+    val uiProses = findViewById<LinearLayout>(R.id.ui_proses)
+    val persenProses = findViewById<TextView>(R.id.persen_proses)
+
+    proses.visibility = View.VISIBLE
+    uiProses.visibility = View.VISIBLE
+
+    uiProses.post {
+        val parentWidth = (uiProses.parent as View).width
+        val newWidth = parentWidth * progress / 100
+
+        uiProses.layoutParams = uiProses.layoutParams.apply {
+            width = newWidth
         }
-        web.loadUrl(url)
-        SembunyikanKeyboard()
-    }
 
-    private fun UpdateProgress(progress: Int) {
-        persen.text = "$progress%"
-
-        proses.visibility = if (progress < 100) View.VISIBLE else View.GONE
-
-        proses.post {
-            val maxWidth = proses.width
-            if (maxWidth > 0) {
-                val params = gambar.layoutParams
-                params.width = maxWidth * progress / 100
-                gambar.layoutParams = params
+        persenProses.text = "$progress%"
+        if (progress >= 100) {
+            proses.visibility = View.GONE
             }
         }
-    }
-
-    private fun Tombol() {
-        findViewById<TextView>(R.id.cari).setOnClickListener {
-            val url = tulis.text.toString().trim()
-            if (url.isNotEmpty()) {
-                TelusuriWeb(url)
-            }
-        }
-
-        nav.setOnClickListener {
-            liner.visibility = if (liner.visibility == View.GONE) { View.VISIBLE } else { View.GONE }
-            IkonNav()
-        }
-        
-        findViewById<TextView>(R.id.keluar).setOnClickListener{
-            Keluar()
-        }
-        
-        findViewById<ImageView>(R.id.google).setOnClickListener{
-            val ganti = "https://www.google.com"
-            TelusuriWeb(ganti)
-            liner.visibility = View.GONE
-            IkonNav()
-        }
-        
-        findViewById<ImageView>(R.id.duck).setOnClickListener{
-            val ganti = "https://www.duckduckgo.com"
-            TelusuriWeb(ganti)
-            liner.visibility = View.GONE
-            IkonNav()
-        }
-        
-        findViewById<TextView>(R.id.unduhan).setOnClickListener{
-            Toast.makeText(this, "Belum Siap", Toast.LENGTH_SHORT).show()
-        }
-        
-        findViewById<TextView>(R.id.tes_jaringan).setOnClickListener{
-            Toast.makeText(this, "Belum Siap", Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    private fun AturInputTeks() {
-        tulis.setOnEditorActionListener { _, actionId, _ ->
-            if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_GO) {
-                val url = tulis.text.toString().trim()
-                if (url.isNotEmpty()) { TelusuriWeb(url) }
-                true
-            } else { false }
-        }
-    }
-
-    private fun IkonNav() {
-        nav.setImageResource(
-            if (liner.visibility == View.GONE)
-                R.drawable.nav
-            else
-                R.drawable.tutup
-        )
-    }
-
-    private fun SembunyikanKeyboard() {
-        tulis.clearFocus()
-        val imm = getSystemService(INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
-        imm.hideSoftInputFromWindow(tulis.windowToken, 0)
     }
 
     override fun onBackPressed() {
-        when {
-            liner.visibility == View.VISIBLE -> {
-                liner.visibility = View.GONE
-                IkonNav()
-            }
-            web.canGoBack() -> web.goBack()
-            else -> Keluar()
+        if (geser.visibility == View.VISIBLE) {
+            geser.visibility = View.GONE
+            IkonNav()
+            return
         }
+
+        if (web.canGoBack()) { web.goBack() }
+        else { Keluar() }
     }
-    
+
     private fun Keluar() {
         val item = LayoutInflater.from(this).inflate(R.layout.item_keluar, null)
-
-        val dialog = AlertDialog.Builder(this)
-            .setView(item)
-            .create()
+        val dialog = AlertDialog.Builder(this).setView(item).create()
         val pesan = item.findViewById<TextView>(R.id.pesan)
-        pesan.text = "Anda Akan Keluar Dari Browser"
+        pesan.text = "Meninggalkan Browser dan Kembali Ke Beranda"
 
         item.findViewById<TextView>(R.id.batal).setOnClickListener {
             dialog.dismiss()
@@ -200,8 +96,39 @@ class Browser : AppCompatActivity() {
         dialog.show()
     }
 
-    override fun onDestroy() {
-        web.destroy()
-        super.onDestroy()
+    private fun IkonNav() {
+        nav.setImageResource(
+            if (geser.visibility == View.GONE){ R.drawable.nav }
+            else{R.drawable.tutup}
+        )
+    }
+
+    private fun Tombol() {
+        nav.setOnClickListener {
+            geser.visibility = if (geser.visibility == View.GONE) View.VISIBLE else View.GONE
+            IkonNav()
+        }
+
+        findViewById<TextView>(R.id.cari).setOnClickListener {
+            val input = tulis.text.toString().trim()
+            if (input.isNotEmpty()) {
+                val url =
+                    if (input.startsWith("http"))
+                        input
+                    else
+                        "https://www.google.com/search?q=$input"
+
+                TelusuriWeb(url)
+            }
+        }
+        
+        findViewById<TextView>(R.id.keluar).setOnClickListener{
+            Keluar()
+        }
+    }
+
+    private fun TelusuriWeb(link: String) {
+        web.loadUrl(link)
+        tulis.setText(link)
     }
 }
