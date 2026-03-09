@@ -49,10 +49,10 @@
     <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
     <uses-permission android:name="android.permission.LAUNCH_MULTI_PANE_SETTINGS_DEEP_LINK"/>
     <uses-permission android:name="android.permission.USB"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
     
-    <uses-feature android:name="android.hardware.usb.host"/>
-    <uses-feature android:name="android.hardware.usb.accessory" android:required="false"/>
-    <uses-feature android:name="android.software.picture_in_picture" android:required="false"/>
     <application
         android:requestLegacyExternalStorage="true"
         android:requestForegroundServiceExemption="true"
@@ -76,7 +76,7 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/aksi_file" />
-
+            
         </provider>
         
         <activity android:name=".App" android:exported="true">
@@ -84,10 +84,23 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="*/*"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="*/*"/>
+            </intent-filter>
         </activity>
         
         <activity android:name=".Terminal" android:exported="true"/>
         <activity android:name=".Berkas" android:exported="true"/>
+        <activity android:name=".Editor" android:exported="true"/>
     </application>
     
 </manifest>

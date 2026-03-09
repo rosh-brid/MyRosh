@@ -113,6 +113,35 @@
 
                 </LinearLayout>
 
+                <LinearLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:gravity="center"
+                     android:background="@drawable/bg_kotak"
+                     android:layout_margin="5dp"
+                     android:padding="25dp"
+                     android:orientation="vertical"
+                     android:backgroundTint="@color/ungu"
+                     android:id="@+id/editor">
+
+                    <ImageView
+                         android:layout_height="40dp"
+                         android:layout_width="40dp"
+                         android:src="@drawable/editor"
+                         android:layout_margin="10dp" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="90dp"
+                         android:gravity="center"
+                         android:padding="5dp"
+                         android:textSize="16sp"
+                         android:textColor="@color/tulisan"
+                         android:text="Editor Text"
+                         android:textStyle="bold" />
+
+                </LinearLayout>
+
             </GridLayout>
 
         </ScrollView>
