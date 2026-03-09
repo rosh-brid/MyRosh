@@ -12,13 +12,19 @@ android {
         minSdk = 23
         targetSdk = 34
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildFeatures {
         viewBinding = true
+    }
+    
+    sourceSets {
+        getByName("main") {
+            jniLibs.srcDirs("src/main/jniLibs")
+        }
     }
 
     compileOptions {
@@ -37,5 +43,5 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.activity:activity:1.7.2")
-    implementation("com.github.topjohnwu.libsu:core:3.1.2")
+    implementation("com.google.android.gms:play-services-ads:23.0.0")
 }

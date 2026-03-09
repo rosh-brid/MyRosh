@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="@color/bg"
+     android:id="@+id/pusat">
+
+    <Switch
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:layout_margin="5dp"
+         android:textColor="@color/tulisan"
+         android:id="@+id/mode"
+         android:text="Custom"
+         android:layout_gravity="center_horizontal" />
+
+    <ScrollView
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:layout_marginBottom="80dp"
+         android:layout_marginEnd="10dp"
+         android:layout_marginTop="40dp"
+         android:layout_marginStart="10dp">
+
+        <TextView
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:textSize="14dp"
+             android:textColor="@color/tulisan"
+             android:textIsSelectable="true"
+             android:id="@+id/hasil"
+             android:text="$"
+             android:textStyle="italic" />
+
+    </ScrollView>
+
+    <LinearLayout
+         android:layout_height="60dp"
+         android:layout_width="match_parent"
+         android:gravity="center"
+         android:background="@drawable/bg_kotak"
+         android:layout_margin="10dp"
+         android:backgroundTint="@color/bg_pop"
+         android:layout_gravity="bottom">
+
+        <EditText
+             android:layout_height="50dp"
+             android:layout_width="200dp"
+             android:layout_marginEnd="15dp"
+             android:hint="Masukan Perintah"
+             android:textColorHint="#555555"
+             android:textColor="@color/tulisan"
+             android:id="@+id/tulis"
+             android:textStyle="bold" />
+
+        <TextView
+             android:layout_height="50dp"
+             android:layout_width="50dp"
+             android:gravity="center"
+             android:background="@drawable/bg_kotak"
+             android:backgroundTint="@color/tulisan"
+             android:textColor="@color/bg"
+             android:id="@+id/kirim"
+             android:text="Kirim" />
+
+    </LinearLayout>
+
+</FrameLayout>

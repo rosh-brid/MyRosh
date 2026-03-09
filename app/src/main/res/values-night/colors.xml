@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <color name="bg">#000000</color>
+    <color name="bg_pop">#777777</color>
+    <color name="tulisan">#ffffff</color>
+    <color name="biru">#099999</color>
+    <color name="ungu">#990099</color>
 </resources>
