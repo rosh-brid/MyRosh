@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:background="@drawable/bg_kotak"
+     android:padding="10dp"
+     android:orientation="vertical"
+     android:backgroundTint="@color/bg_pop"
+     android:id="@+id/inti">
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:background="@color/ungu"
+         android:padding="10dp"
+         android:textSize="16sp"
+         android:textColor="@color/tulisan"
+         android:id="@+id/judul"
+         android:textStyle="bold"
+         android:text="Membuat Baru" />
+
+    <EditText
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:background="@drawable/bg_kotak"
+         android:hint="Masukan Text"
+         android:layout_margin="20dp"
+         android:padding="5dp"
+         android:textColorHint="#555555"
+         android:textSize="14sp"
+         android:backgroundTint="@color/biru"
+         android:textColor="@color/tulisan"
+         android:id="@+id/tulis" />
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:orientation="vertical"
+         android:layout_marginTop="10dp">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center"
+             android:background="@drawable/bg_kotak"
+             android:padding="10dp"
+             android:layout_margin="10dp"
+             android:textSize="14sp"
+             android:backgroundTint="@color/ungu"
+             android:textColor="@color/tulisan"
+             android:text="Batal"
+             android:id="@+id/batal"
+             android:textStyle="bold" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:gravity="center"
+             android:background="@drawable/bg_kotak"
+             android:padding="10dp"
+             android:layout_margin="10dp"
+             android:textSize="14sp"
+             android:backgroundTint="@color/ungu"
+             android:textColor="@color/tulisan"
+             android:text="Lanjut"
+             android:id="@+id/oke"
+             android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>
