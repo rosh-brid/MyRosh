@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:background="@color/bg_pop"
+     android:orientation="vertical"
+     android:id="@+id/inti">
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:gravity="center"
+         android:background="@color/ungu"
+         android:padding="10dp"
+         android:textSize="16sp"
+         android:textStyle="bold"
+         android:text="My Profile" />
+
+    <ScrollView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_margin="10dp">
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:orientation="vertical"
+             android:gravity="center_horizontal">
+
+            <ImageView
+                 android:id="@+id/foto"
+                 android:layout_width="96dp"
+                 android:layout_height="96dp"
+                 android:layout_marginTop="10dp"
+                 android:layout_marginBottom="12dp"
+                 android:background="@drawable/bg_cincin"
+                 android:padding="6dp"
+                 android:scaleType="centerCrop"
+                 android:src="@drawable/ikon_pp" />
+
+            <GridLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:layout_margin="10dp"
+                 android:columnCount="2">
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_margin="10dp"
+                     android:textSize="15sp"
+                     android:textColor="@color/tulisan"
+                     android:textStyle="italic"
+                     android:text="NAMA " />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_margin="10dp"
+                     android:textSize="14sp"
+                     android:textColor="@color/tulisan"
+                     android:textStyle="italic"
+                     android:text="myrosh devoloper"
+                     android:id="@+id/nama" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_margin="10dp"
+                     android:textSize="15sp"
+                     android:textColor="@color/tulisan"
+                     android:textStyle="italic"
+                     android:text="EMAIL " />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_margin="10dp"
+                     android:textSize="14sp"
+                     android:textColor="@color/tulisan"
+                     android:textStyle="italic"
+                     android:text="myrosh@gmail.com"
+                     android:id="@+id/email" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_margin="10dp"
+                     android:textSize="15sp"
+                     android:textColor="@color/tulisan"
+                     android:textStyle="italic"
+                     android:text="Nomor Telp :" />
+
+                <TextView
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:layout_margin="10dp"
+                     android:textSize="14sp"
+                     android:textColor="@color/tulisan"
+                     android:textStyle="italic"
+                     android:text="*****123"
+                     android:id="@+id/nomor" />
+
+            </GridLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:gravity="center"
+         android:background="@drawable/bg_kotak"
+         android:padding="10dp"
+         android:layout_margin="20dp"
+         android:textSize="16sp"
+         android:backgroundTint="@color/ungu"
+         android:textColor="@color/tulisan"
+         android:id="@+id/mendaftar"
+         android:textStyle="bold"
+         android:visibility="gone"
+         android:text="Masuk Google" />
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:gravity="center"
+         android:background="@drawable/bg_kotak"
+         android:padding="10dp"
+         android:layout_margin="20dp"
+         android:textSize="16sp"
+         android:backgroundTint="@color/ungu"
+         android:textColor="@color/tulisan"
+         android:id="@+id/batal"
+         android:textStyle="bold"
+         android:text="Batal" />
+
+</LinearLayout>
