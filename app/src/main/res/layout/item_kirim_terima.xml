@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:background="@drawable/bg_kotak"
+     android:padding="10dp"
+     android:orientation="vertical"
+     android:backgroundTint="@color/bg_pop"
+     android:id="@+id/inti">
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_marginBottom="10dp"
+         android:background="@drawable/bg_kotak"
+         android:padding="10dp"
+         android:textSize="16sp"
+         android:backgroundTint="@color/ungu"
+         android:textColor="@color/tulisan"
+         android:id="@+id/judul"
+         android:text="Menerima File"
+         android:textStyle="bold" />
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:background="@drawable/bg_kotak"
+         android:padding="10dp"
+         android:layout_margin="20dp"
+         android:orientation="vertical"
+         android:backgroundTint="@color/ungu">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp"
+             android:padding="10dp"
+             android:textSize="14sp"
+             android:textColor="@color/tulisan"
+             android:id="@+id/musik"
+             android:text="Musik" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:padding="10dp"
+             android:layout_margin="10dp"
+             android:textSize="14sp"
+             android:textColor="@color/tulisan"
+             android:id="@+id/dokumen"
+             android:text="Dokumen" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp"
+             android:padding="10dp"
+             android:textSize="14sp"
+             android:textColor="@color/tulisan"
+             android:id="@+id/video"
+             android:text="Video" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp"
+             android:padding="10dp"
+             android:textSize="14sp"
+             android:textColor="@color/tulisan"
+             android:id="@+id/terminal"
+             android:text="Terminal" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp"
+             android:padding="10dp"
+             android:textSize="14sp"
+             android:textColor="@color/tulisan"
+             android:id="@+id/gambar"
+             android:text="Galeri" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp"
+             android:padding="10dp"
+             android:textSize="14sp"
+             android:textColor="@color/tulisan"
+             android:id="@+id/pdf"
+             android:text="PDF" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:padding="10dp"
+             android:layout_margin="10dp"
+             android:textSize="14sp"
+             android:textColor="@color/tulisan"
+             android:id="@+id/lainnya"
+             android:text="Lainnya" />
+
+    </LinearLayout>
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:background="@drawable/bg_kotak"
+         android:gravity="center"
+         android:padding="10dp"
+         android:layout_margin="20dp"
+         android:textSize="15sp"
+         android:backgroundTint="@color/ungu"
+         android:textColor="@color/tulisan"
+         android:textStyle="bold"
+         android:text="Tutup"
+         android:id="@+id/tutup" />
+
+</LinearLayout>
