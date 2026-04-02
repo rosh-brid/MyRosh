@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "451446710139",
+    "project_id": "myrosh-77417",
+    "storage_bucket": "myrosh-77417.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451446710139:android:c684014589a8b8b009e7de",
+        "android_client_info": {
+          "package_name": "rosh.myrosh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451446710139-66cbdohecqj30vfi1gsdofae7gv8crdr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "rosh.myrosh",
+            "certificate_hash": "d0a80778a7946b392cb381b24310193b6186e596"
+          }
+        },
+        {
+          "client_id": "451446710139-7ov62fbp9l9vugfnu7v2u625s0cjb5he.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWcv8m57eZQNBCgyuu92QLFWF24AePtb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451446710139-7ov62fbp9l9vugfnu7v2u625s0cjb5he.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
