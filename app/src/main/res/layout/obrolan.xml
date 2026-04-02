@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="@color/bg"
+     android:id="@+id/pusat">
+
+    <FrameLayout
+         android:layout_height="match_parent"
+         android:layout_width="match_parent">
+
+        <LinearLayout
+             android:layout_height="40dp"
+             android:layout_width="match_parent"
+             android:gravity="center_vertical"
+             android:background="@color/biru">
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="10dp"
+                 android:src="@drawable/pp"
+                 android:background="@drawable/bg_cincin"
+                 android:padding="5dp"
+                 android:layout_marginStart="10dp"
+                 android:id="@+id/pp" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:layout_marginEnd="40dp"
+                 android:textSize="16sp"
+                 android:textColor="@color/tulisan"
+                 android:text="MyRosh"
+                 android:textStyle="bold"
+                 android:id="@+id/nama" />
+
+        </LinearLayout>
+
+        <ScrollView
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_marginBottom="80dp"
+             android:layout_marginEnd="10dp"
+             android:layout_marginTop="60dp"
+             android:layout_marginStart="10dp">
+
+            <GridLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:orientation="vertical"
+                 android:id="@+id/grid">
+
+            </GridLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+             android:layout_height="60dp"
+             android:layout_width="match_parent"
+             android:gravity="center"
+             android:background="@drawable/bg_kotak"
+             android:padding="10dp"
+             android:layout_margin="10dp"
+             android:backgroundTint="@color/biru"
+             android:layout_gravity="bottom">
+
+            <EditText
+                 android:layout_height="50dp"
+                 android:layout_width="250dp"
+                 android:layout_marginEnd="10dp"
+                 android:hint="Masukan Pesan"
+                 android:textColorHint="#555555"
+                 android:textColor="@color/tulisan"
+                 android:id="@+id/tulis" />
+
+            <TextView
+                 android:layout_height="50dp"
+                 android:layout_width="50dp"
+                 android:gravity="center"
+                 android:background="@drawable/bg_kotak"
+                 android:backgroundTint="@color/ungu"
+                 android:textColor="@color/tulisan"
+                 android:textStyle="bold"
+                 android:text="Kirim"
+                 android:id="@+id/kirim" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="300dp"
+         android:background="@color/biru"
+         android:layout_gravity="start">
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
