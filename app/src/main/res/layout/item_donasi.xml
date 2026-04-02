@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:background="@drawable/bg_kotak"
+     android:padding="10dp"
+     android:orientation="vertical"
+     android:backgroundTint="@color/bg_pop"
+     android:id="@+id/inti">
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:gravity="center"
+         android:background="@drawable/bg_kotak"
+         android:padding="10dp"
+         android:layout_margin="5dp"
+         android:textSize="16sp"
+         android:backgroundTint="@color/ungu"
+         android:textColor="@color/tulisan"
+         android:text="TERIMAKASIH SUDAH BERDONASI"
+         android:textStyle="bold" />
+
+    <LinearLayout
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_margin="20dp"
+         android:orientation="vertical">
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:background="@drawable/bg_kotak"
+             android:gravity="center"
+             android:padding="10dp"
+             android:layout_margin="10dp"
+             android:textSize="15sp"
+             android:backgroundTint="@color/ungu"
+             android:textColor="@color/tulisan"
+             android:id="@+id/poin"
+             android:text="Poin : 0"
+             android:textStyle="bold" />
+
+        <ImageView
+             android:layout_height="100dp"
+             android:layout_width="100dp"
+             android:src="@drawable/uang"
+             android:layout_margin="10dp"
+             android:layout_gravity="center_horizontal"
+             android:id="@+id/qris" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:background="@drawable/bg_kotak"
+             android:padding="10dp"
+             android:layout_margin="20dp"
+             android:textSize="14sp"
+             android:backgroundTint="#00ff00"
+             android:textColor="#000000"
+             android:id="@+id/video_iklan"
+             android:text="TONTON IKLAN +5" />
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:background="@drawable/bg_kotak"
+             android:padding="10dp"
+             android:layout_margin="20dp"
+             android:textSize="14sp"
+             android:backgroundTint="#00ff00"
+             android:textColor="#000000"
+             android:id="@+id/tf"
+             android:text="Transfer Bank +25" />
+
+    </LinearLayout>
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:gravity="center"
+         android:background="@drawable/bg_kotak"
+         android:padding="10dp"
+         android:layout_margin="10dp"
+         android:textSize="16sp"
+         android:backgroundTint="@color/ungu"
+         android:textColor="@color/tulisan"
+         android:id="@+id/tutup"
+         android:text="COBA NANTI"
+         android:textStyle="bold" />
+
+</LinearLayout>
