@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="@color/bg"
+     android:id="@+id/pusat">
+
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:orientation="vertical">
+
+        <LinearLayout
+             android:layout_height="40dp"
+             android:layout_width="match_parent"
+             android:gravity="center_vertical"
+             android:background="@color/biru">
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="40dp"
+                 android:src="@drawable/nav"
+                 android:layout_marginStart="10dp"
+                 android:id="@+id/nav" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="20dp"
+                 android:src="@drawable/baru"
+                 android:id="@+id/baru" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="20dp"
+                 android:src="@drawable/cari_file"
+                 android:id="@+id/cari" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="20dp"
+                 android:src="@drawable/urut"
+                 android:id="@+id/urut" />
+
+        </LinearLayout>
+
+        <TextView
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_margin="5dp"
+             android:padding="5dp"
+             android:textSize="14sp"
+             android:textColor="@color/tulisan"
+             android:textIsSelectable="true"
+             android:text="/"
+             android:textStyle="italic"
+             android:id="@+id/jalur" />
+
+        <ScrollView
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp">
+
+            <GridLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:columnCount="3"
+                 android:id="@+id/tempat_file"
+                 android:layout_gravity="center_horizontal">
+
+            </GridLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="300dp"
+         android:background="@color/biru"
+         android:orientation="vertical"
+         android:layout_gravity="start">
+
+        <FrameLayout
+             android:layout_height="40dp"
+             android:layout_width="match_parent">
+
+            <TextView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:gravity="center"
+                 android:background="@drawable/bg_kotak"
+                 android:backgroundTint="#ff0000"
+                 android:layout_marginStart="10dp"
+                 android:id="@+id/keluar"
+                 android:layout_gravity="center_vertical"
+                 android:text="X" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:src="@drawable/apk_folder"
+                 android:layout_marginStart="80dp"
+                 android:layout_gravity="center_vertical"
+                 android:id="@+id/apk" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:src="@drawable/sd_folder"
+                 android:layout_marginStart="130dp"
+                 android:layout_gravity="center_vertical"
+                 android:id="@+id/sd" />
+
+        </FrameLayout>
+
+        <LinearLayout
+             android:layout_height="wrap_content"
+             android:layout_width="wrap_content">
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
