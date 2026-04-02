@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="wrap_content"
+     android:layout_width="match_parent"
+     android:background="@drawable/bg_kotak"
+     android:padding="10dp"
+     android:orientation="vertical"
+     android:backgroundTint="@color/bg_pop"
+     android:id="@+id/inti">
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:layout_marginBottom="20dp"
+         android:background="@color/ungu"
+         android:padding="10dp"
+         android:textSize="16sp"
+         android:textColor="@color/tulisan"
+         android:textStyle="bold"
+         android:text="Pilih Opsi" />
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:background="@drawable/bg_kotak"
+         android:padding="10dp"
+         android:layout_margin="10dp"
+         android:textSize="14sp"
+         android:backgroundTint="@color/biru"
+         android:textColor="@color/tulisan"
+         android:id="@+id/file"
+         android:textStyle="italic"
+         android:text="File" />
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:background="@drawable/bg_kotak"
+         android:padding="10dp"
+         android:layout_margin="10dp"
+         android:textSize="14sp"
+         android:backgroundTint="@color/biru"
+         android:textColor="@color/tulisan"
+         android:id="@+id/folder"
+         android:textStyle="italic"
+         android:text="Folder" />
+
+    <TextView
+         android:layout_height="wrap_content"
+         android:layout_width="match_parent"
+         android:background="@drawable/bg_kotak"
+         android:padding="10dp"
+         android:layout_margin="10dp"
+         android:textSize="14sp"
+         android:backgroundTint="#fff000"
+         android:textColor="@color/tulisan"
+         android:id="@+id/batal"
+         android:textStyle="italic"
+         android:text="Batal" />
+
+</LinearLayout>
