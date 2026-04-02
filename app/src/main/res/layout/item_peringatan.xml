@@ -4,23 +4,24 @@
      xmlns:app="http://schemas.android.com/apk/res-auto"
      android:layout_height="wrap_content"
      android:layout_width="match_parent"
-     android:background="@color/bg_pop"
+     android:background="@drawable/bg_kotak"
      android:padding="10dp"
      android:orientation="vertical"
+     android:backgroundTint="@color/bg_pop"
      android:id="@+id/inti">
 
     <TextView
          android:layout_height="wrap_content"
          android:layout_width="match_parent"
-         android:background="@drawable/bg_kotak"
          android:gravity="center"
-         android:padding="10dp"
+         android:background="@color/ungu"
+         android:padding="5dp"
          android:layout_margin="5dp"
          android:textSize="16sp"
-         android:backgroundTint="@color/ungu"
          android:textColor="@color/tulisan"
          android:id="@+id/judul"
-         android:textStyle="bold" />
+         android:textStyle="bold"
+         android:text="Peringatan" />
 
     <TextView
          android:layout_height="wrap_content"
@@ -28,36 +29,40 @@
          android:layout_margin="20dp"
          android:textSize="14sp"
          android:textColor="@color/tulisan"
-         android:id="@+id/pesan"
-         android:textStyle="italic" />
+         android:textStyle="italic"
+         android:id="@+id/pesan" />
 
     <LinearLayout
          android:layout_height="wrap_content"
          android:layout_width="match_parent"
          android:gravity="end"
-         android:layout_marginTop="10dp">
+         android:layout_margin="10dp">
 
         <TextView
-             android:layout_height="35dp"
-             android:layout_width="70dp"
+             android:layout_height="30dp"
+             android:layout_width="60dp"
              android:layout_marginEnd="15dp"
-             android:background="@drawable/bg_kotak"
              android:gravity="center"
+             android:background="@drawable/bg_kotak"
+             android:textSize="15sp"
              android:backgroundTint="@color/ungu"
              android:textColor="@color/tulisan"
-             android:id="@+id/batal"
-             android:text="BATAL" />
+             android:textStyle="bold"
+             android:text="Batal"
+             android:id="@+id/batal" />
 
         <TextView
-             android:layout_height="35dp"
-             android:layout_width="70dp"
+             android:layout_height="30dp"
+             android:layout_width="60dp"
              android:layout_marginEnd="15dp"
-             android:background="@drawable/bg_kotak"
              android:gravity="center"
+             android:background="@drawable/bg_kotak"
+             android:textSize="15sp"
              android:backgroundTint="@color/ungu"
              android:textColor="@color/tulisan"
-             android:id="@+id/oke"
-             android:text="LANJUT" />
+             android:textStyle="bold"
+             android:text="Lanjut"
+             android:id="@+id/oke" />
 
     </LinearLayout>
 
