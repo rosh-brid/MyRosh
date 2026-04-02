@@ -1,70 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<androidx.drawerlayout.widget.DrawerLayout
      xmlns:android="http://schemas.android.com/apk/res/android"
-     xmlns:app="http://schemas.android.com/apk/res-auto"
      android:layout_height="match_parent"
      android:layout_width="match_parent"
      android:background="@color/bg"
      android:id="@+id/pusat">
 
-    <Switch
-         android:layout_height="wrap_content"
-         android:layout_width="wrap_content"
-         android:layout_margin="5dp"
-         android:textColor="@color/tulisan"
-         android:id="@+id/mode"
-         android:text="Custom"
-         android:layout_gravity="center_horizontal" />
-
-    <ScrollView
+    <FrameLayout
          android:layout_height="match_parent"
-         android:layout_width="match_parent"
-         android:layout_marginBottom="80dp"
-         android:layout_marginEnd="10dp"
-         android:layout_marginTop="40dp"
-         android:layout_marginStart="10dp">
+         android:layout_width="match_parent">
 
-        <TextView
+        <LinearLayout
+             android:layout_height="40dp"
+             android:layout_width="match_parent"
+             android:gravity="center_vertical"
+             android:background="@color/biru">
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="50dp"
+                 android:src="@drawable/nav"
+                 android:layout_marginStart="10dp"
+                 android:id="@+id/nav" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textColor="@color/tulisan"
+                 android:text="Shell no 1"
+                 android:id="@+id/nama"
+                 android:textStyle="italic" />
+
+        </LinearLayout>
+
+        <ScrollView
              android:layout_height="match_parent"
              android:layout_width="match_parent"
-             android:textSize="14dp"
-             android:textColor="@color/tulisan"
-             android:textIsSelectable="true"
-             android:id="@+id/hasil"
-             android:text="$"
-             android:textStyle="italic" />
+             android:layout_marginBottom="80dp"
+             android:layout_marginEnd="15dp"
+             android:layout_marginTop="50dp"
+             android:layout_marginStart="15dp"
+             android:id="@+id/scroll">
 
-    </ScrollView>
+            <TextView
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent"
+                 android:textSize="14sp"
+                 android:textColor="@color/tulisan"
+                 android:textIsSelectable="true"
+                 android:textStyle="bold | italic"
+                 android:id="@+id/hasil" />
+
+        </ScrollView>
+
+        <LinearLayout
+             android:layout_height="60dp"
+             android:layout_width="match_parent"
+             android:background="@drawable/bg_kotak"
+             android:gravity="center"
+             android:layout_margin="10dp"
+             android:backgroundTint="@color/biru"
+             android:layout_gravity="bottom">
+
+            <EditText
+                 android:layout_height="50dp"
+                 android:layout_width="200dp"
+                 android:layout_marginEnd="10dp"
+                 android:hint="Input Command"
+                 android:textColorHint="#555555"
+                 android:textColor="@color/tulisan"
+                 android:id="@+id/tulis" />
+
+            <TextView
+                 android:layout_height="50dp"
+                 android:layout_width="50dp"
+                 android:gravity="center"
+                 android:background="@drawable/bg_kotak"
+                 android:backgroundTint="@color/ungu"
+                 android:textColor="@color/tulisan"
+                 android:id="@+id/kirim"
+                 android:text="Run" />
+
+        </LinearLayout>
+
+    </FrameLayout>
 
     <LinearLayout
-         android:layout_height="60dp"
-         android:layout_width="match_parent"
-         android:gravity="center"
-         android:background="@drawable/bg_kotak"
-         android:layout_margin="10dp"
-         android:backgroundTint="@color/bg_pop"
-         android:layout_gravity="bottom">
+         android:layout_height="match_parent"
+         android:layout_width="300dp"
+         android:background="@color/biru"
+         android:orientation="vertical"
+         android:layout_gravity="start">
 
-        <EditText
-             android:layout_height="50dp"
-             android:layout_width="200dp"
-             android:layout_marginEnd="15dp"
-             android:hint="Masukan Perintah"
-             android:textColorHint="#555555"
-             android:textColor="@color/tulisan"
-             android:id="@+id/tulis"
-             android:textStyle="bold" />
+        <FrameLayout
+             android:layout_height="40dp"
+             android:layout_width="match_parent">
+
+            <TextView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:gravity="center"
+                 android:background="@drawable/bg_kotak"
+                 android:backgroundTint="#ff0000"
+                 android:textColor="@color/tulisan"
+                 android:layout_marginStart="10dp"
+                 android:text="X"
+                 android:textStyle="bold"
+                 android:layout_gravity="center_vertical"
+                 android:id="@+id/keluar" />
+
+            <Switch
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:padding="5dp"
+                 android:textColor="@color/tulisan"
+                 android:layout_gravity="center"
+                 android:textStyle="bold"
+                 android:id="@+id/mode"
+                 android:text="Custom" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="10dp"
+                 android:src="@drawable/tutup"
+                 android:layout_gravity="end | center_vertical"
+                 android:id="@+id/tutup" />
+
+        </FrameLayout>
 
         <TextView
-             android:layout_height="50dp"
-             android:layout_width="50dp"
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
              android:gravity="center"
              android:background="@drawable/bg_kotak"
-             android:backgroundTint="@color/tulisan"
-             android:textColor="@color/bg"
-             android:id="@+id/kirim"
-             android:text="Kirim" />
+             android:layout_margin="20dp"
+             android:padding="10dp"
+             android:textSize="16sp"
+             android:backgroundTint="@color/ungu"
+             android:textColor="@color/tulisan"
+             android:textStyle="bold"
+             android:id="@+id/baru"
+             android:text="+ NEW SHELL" />
+
+        <ScrollView
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp">
+
+            <GridLayout
+                 android:layout_height="wrap_content"
+                 android:layout_width="match_parent"
+                 android:orientation="vertical"
+                 android:id="@+id/grid">
+
+            </GridLayout>
+
+        </ScrollView>
 
     </LinearLayout>
 
-</FrameLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
