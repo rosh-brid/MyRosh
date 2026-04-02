@@ -23,7 +23,7 @@
             <ImageView
                  android:layout_height="30dp"
                  android:layout_width="30dp"
-                 android:layout_marginEnd="50dp"
+                 android:layout_marginEnd="40dp"
                  android:src="@drawable/nav"
                  android:layout_marginStart="10dp"
                  android:id="@+id/nav" />
@@ -42,6 +42,7 @@
              app:adSize="BANNER"
              android:layout_margin="10dp"
              app:adUnitId="ca-app-pub-2534537144295464/4309541326"
+             android:layout_alignParentBottom="true"
              android:id="@+id/iklan_kotak" />
 
         <ScrollView
@@ -58,55 +59,24 @@
                 <LinearLayout
                      android:layout_height="wrap_content"
                      android:layout_width="wrap_content"
-                     android:gravity="center"
                      android:background="@drawable/bg_kotak"
-                     android:layout_margin="5dp"
-                     android:padding="25dp"
-                     android:orientation="vertical"
-                     android:backgroundTint="@color/ungu"
-                     android:id="@+id/terminal">
-
-                    <ImageView
-                         android:layout_height="40dp"
-                         android:layout_width="40dp"
-                         android:src="@drawable/terminal"
-                         android:layout_margin="10dp" />
-
-                    <TextView
-                         android:layout_height="wrap_content"
-                         android:layout_width="90dp"
-                         android:gravity="center"
-                         android:padding="5dp"
-                         android:textSize="16sp"
-                         android:textColor="@color/tulisan"
-                         android:text="Terminal"
-                         android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                     android:layout_height="wrap_content"
-                     android:layout_width="wrap_content"
                      android:gravity="center"
-                     android:background="@drawable/bg_kotak"
                      android:layout_margin="5dp"
-                     android:padding="25dp"
+                     android:padding="30dp"
                      android:orientation="vertical"
-                     android:backgroundTint="@color/ungu"
+                     android:backgroundTint="@color/biru"
                      android:id="@+id/berkas">
 
                     <ImageView
                          android:layout_height="40dp"
                          android:layout_width="40dp"
-                         android:src="@drawable/berkas"
-                         android:layout_margin="10dp" />
+                         android:src="@drawable/berkas" />
 
                     <TextView
                          android:layout_height="wrap_content"
-                         android:layout_width="90dp"
+                         android:layout_width="75dp"
                          android:gravity="center"
-                         android:padding="5dp"
-                         android:textSize="16sp"
+                         android:textSize="15sp"
                          android:textColor="@color/tulisan"
                          android:text="Berkas"
                          android:textStyle="bold" />
@@ -116,28 +86,188 @@
                 <LinearLayout
                      android:layout_height="wrap_content"
                      android:layout_width="wrap_content"
-                     android:gravity="center"
                      android:background="@drawable/bg_kotak"
+                     android:gravity="center"
                      android:layout_margin="5dp"
-                     android:padding="25dp"
+                     android:padding="30dp"
                      android:orientation="vertical"
-                     android:backgroundTint="@color/ungu"
+                     android:backgroundTint="@color/biru"
+                     android:id="@+id/terminal">
+
+                    <ImageView
+                         android:layout_height="40dp"
+                         android:layout_width="40dp"
+                         android:src="@drawable/terminal" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="75dp"
+                         android:gravity="center"
+                         android:textSize="15sp"
+                         android:textColor="@color/tulisan"
+                         android:text="Terminal"
+                         android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:background="@drawable/bg_kotak"
+                     android:gravity="center"
+                     android:layout_margin="5dp"
+                     android:padding="30dp"
+                     android:orientation="vertical"
+                     android:backgroundTint="@color/biru"
+                     android:id="@+id/musik">
+
+                    <ImageView
+                         android:layout_height="40dp"
+                         android:layout_width="40dp"
+                         android:src="@drawable/musik" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="75dp"
+                         android:gravity="center"
+                         android:textSize="15sp"
+                         android:textColor="@color/tulisan"
+                         android:text="Musik"
+                         android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:background="@drawable/bg_kotak"
+                     android:gravity="center"
+                     android:layout_margin="5dp"
+                     android:padding="30dp"
+                     android:orientation="vertical"
+                     android:backgroundTint="@color/biru"
+                     android:id="@+id/gambar">
+
+                    <ImageView
+                         android:layout_height="40dp"
+                         android:layout_width="40dp"
+                         android:src="@drawable/gambar" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="75dp"
+                         android:gravity="center"
+                         android:textSize="15sp"
+                         android:textColor="@color/tulisan"
+                         android:text="Gambar"
+                         android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:background="@drawable/bg_kotak"
+                     android:gravity="center"
+                     android:layout_margin="5dp"
+                     android:padding="30dp"
+                     android:orientation="vertical"
+                     android:backgroundTint="@color/biru"
+                     android:id="@+id/video">
+
+                    <ImageView
+                         android:layout_height="40dp"
+                         android:layout_width="40dp"
+                         android:src="@drawable/video" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="75dp"
+                         android:gravity="center"
+                         android:textSize="15sp"
+                         android:textColor="@color/tulisan"
+                         android:text="Video"
+                         android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:background="@drawable/bg_kotak"
+                     android:gravity="center"
+                     android:layout_margin="5dp"
+                     android:padding="30dp"
+                     android:orientation="vertical"
+                     android:backgroundTint="@color/biru"
+                     android:id="@+id/obrolan">
+
+                    <ImageView
+                         android:layout_height="40dp"
+                         android:layout_width="40dp"
+                         android:src="@drawable/chat" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="75dp"
+                         android:gravity="center"
+                         android:textSize="15sp"
+                         android:textColor="@color/tulisan"
+                         android:text="Obrolan"
+                         android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:background="@drawable/bg_kotak"
+                     android:gravity="center"
+                     android:layout_margin="5dp"
+                     android:padding="30dp"
+                     android:orientation="vertical"
+                     android:backgroundTint="@color/biru"
+                     android:id="@+id/browser">
+
+                    <ImageView
+                         android:layout_height="40dp"
+                         android:layout_width="40dp"
+                         android:src="@drawable/browser" />
+
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="75dp"
+                         android:gravity="center"
+                         android:textSize="15sp"
+                         android:textColor="@color/tulisan"
+                         android:text="Browser"
+                         android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                     android:layout_height="wrap_content"
+                     android:layout_width="wrap_content"
+                     android:background="@drawable/bg_kotak"
+                     android:gravity="center"
+                     android:layout_margin="5dp"
+                     android:padding="30dp"
+                     android:orientation="vertical"
+                     android:backgroundTint="@color/biru"
                      android:id="@+id/editor">
 
                     <ImageView
                          android:layout_height="40dp"
                          android:layout_width="40dp"
-                         android:src="@drawable/editor"
-                         android:layout_margin="10dp" />
+                         android:src="@drawable/editor" />
 
                     <TextView
                          android:layout_height="wrap_content"
-                         android:layout_width="90dp"
+                         android:layout_width="75dp"
                          android:gravity="center"
-                         android:padding="5dp"
-                         android:textSize="16sp"
+                         android:textSize="15sp"
                          android:textColor="@color/tulisan"
-                         android:text="Editor Text"
+                         android:text="Editor"
                          android:textStyle="bold" />
 
                 </LinearLayout>
@@ -163,185 +293,141 @@
             <TextView
                  android:layout_height="30dp"
                  android:layout_width="30dp"
-                 android:gravity="center"
                  android:background="@drawable/bg_kotak"
+                 android:gravity="center"
+                 android:textSize="15dp"
                  android:backgroundTint="#ff0000"
+                 android:textColor="@color/tulisan"
                  android:layout_marginStart="10dp"
-                 android:layout_gravity="center_vertical"
-                 android:text="X"
+                 android:textStyle="bold"
                  android:id="@+id/keluar"
-                 android:textStyle="bold" />
+                 android:layout_gravity="center_vertical"
+                 android:text="X" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="10dp"
+                 android:src="@drawable/tutup"
+                 android:layout_gravity="end | center_vertical"
+                 android:id="@+id/tutup" />
 
         </FrameLayout>
 
         <LinearLayout
              android:layout_height="match_parent"
              android:layout_width="match_parent"
+             android:layout_margin="10dp"
              android:orientation="vertical">
 
             <LinearLayout
                  android:layout_height="wrap_content"
                  android:layout_width="match_parent"
-                 android:layout_marginBottom="15dp"
+                 android:layout_marginBottom="30dp"
                  android:gravity="center"
-                 android:orientation="vertical"
-                 android:layout_marginTop="15dp">
+                 android:orientation="vertical">
 
                 <ImageView
                      android:layout_height="100dp"
                      android:layout_width="100dp"
                      android:src="@drawable/pp"
-                     android:layout_margin="10dp"
+                     android:layout_margin="15dp"
                      android:id="@+id/pp" />
 
                 <TextView
                      android:layout_height="wrap_content"
                      android:layout_width="wrap_content"
-                     android:textSize="16sp"
+                     android:textSize="15sp"
                      android:textColor="@color/tulisan"
-                     android:text="NAMA DITAMPILKAN DISINI"
+                     android:id="@+id/nama"
                      android:textStyle="bold"
-                     android:id="@+id/nama" />
+                     android:text="MY ROSH" />
 
             </LinearLayout>
 
             <ScrollView
                  android:layout_height="match_parent"
                  android:layout_width="match_parent"
-                 android:layout_margin="10dp">
+                 android:background="@drawable/bg_kotak"
+                 android:layout_margin="10dp"
+                 android:backgroundTint="@color/bg_pop">
 
                 <LinearLayout
                      android:layout_height="match_parent"
                      android:layout_width="match_parent"
-                     android:background="@drawable/bg_kotak"
-                     android:padding="5dp"
-                     android:orientation="vertical"
-                     android:backgroundTint="@color/biru">
+                     android:orientation="vertical">
 
-                    <LinearLayout
+                    <TextView
                          android:layout_height="wrap_content"
                          android:layout_width="match_parent"
                          android:background="@drawable/bg_kotak"
-                         android:gravity="center_vertical"
                          android:layout_margin="10dp"
+                         android:padding="10dp"
+                         android:textSize="16sp"
                          android:backgroundTint="@color/ungu"
-                         android:id="@+id/profil">
+                         android:textColor="@color/tulisan"
+                         android:text="Profil Saya"
+                         android:id="@+id/profil" />
 
-                        <ImageView
-                             android:layout_height="30dp"
-                             android:layout_width="30dp"
-                             android:src="@drawable/pp"
-                             android:layout_margin="10dp" />
-
-                        <TextView
-                             android:layout_height="wrap_content"
-                             android:layout_width="wrap_content"
-                             android:textSize="14sp"
-                             android:textColor="@color/tulisan"
-                             android:textStyle="italic"
-                             android:text="Profile Saya" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
                          android:layout_height="wrap_content"
                          android:layout_width="match_parent"
                          android:background="@drawable/bg_kotak"
-                         android:gravity="center_vertical"
                          android:layout_margin="10dp"
+                         android:padding="10dp"
+                         android:textSize="16sp"
                          android:backgroundTint="@color/ungu"
-                         android:id="@+id/izin">
+                         android:textColor="@color/tulisan"
+                         android:text="Izin Aplikasi"
+                         android:id="@+id/izin" />
 
-                        <ImageView
-                             android:layout_height="30dp"
-                             android:layout_width="30dp"
-                             android:src="@drawable/sd_tolak"
-                             android:layout_margin="10dp" />
-
-                        <TextView
-                             android:layout_height="wrap_content"
-                             android:layout_width="wrap_content"
-                             android:textSize="14sp"
-                             android:textColor="@color/tulisan"
-                             android:textStyle="italic"
-                             android:text="Izin Aplikasi" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
                          android:layout_height="wrap_content"
                          android:layout_width="match_parent"
                          android:background="@drawable/bg_kotak"
-                         android:gravity="center_vertical"
                          android:layout_margin="10dp"
+                         android:padding="10dp"
+                         android:textSize="16sp"
                          android:backgroundTint="@color/ungu"
-                         android:id="@+id/bantuan">
+                         android:textColor="@color/tulisan"
+                         android:text="Donasi"
+                         android:id="@+id/donasi" />
 
-                        <ImageView
-                             android:layout_height="30dp"
-                             android:layout_width="30dp"
-                             android:src="@drawable/salaman"
-                             android:layout_margin="10dp" />
-
-                        <TextView
-                             android:layout_height="wrap_content"
-                             android:layout_width="wrap_content"
-                             android:textSize="14sp"
-                             android:textColor="@color/tulisan"
-                             android:textStyle="italic"
-                             android:text="Bantuan" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
                          android:layout_height="wrap_content"
                          android:layout_width="match_parent"
                          android:background="@drawable/bg_kotak"
-                         android:gravity="center_vertical"
                          android:layout_margin="10dp"
+                         android:padding="10dp"
+                         android:textSize="16sp"
                          android:backgroundTint="@color/ungu"
-                         android:id="@+id/info_perangkat">
+                         android:textColor="@color/tulisan"
+                         android:text="Bantuan"
+                         android:id="@+id/bantuan" />
 
-                        <ImageView
-                             android:layout_height="30dp"
-                             android:layout_width="30dp"
-                             android:src="@drawable/info_ponsel"
-                             android:layout_margin="10dp" />
-
-                        <TextView
-                             android:layout_height="wrap_content"
-                             android:layout_width="wrap_content"
-                             android:textSize="14sp"
-                             android:textColor="@color/tulisan"
-                             android:textStyle="italic"
-                             android:text="Informasi Perangkat" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
                          android:layout_height="wrap_content"
                          android:layout_width="match_parent"
                          android:background="@drawable/bg_kotak"
-                         android:gravity="center_vertical"
                          android:layout_margin="10dp"
+                         android:padding="10dp"
+                         android:textSize="16sp"
                          android:backgroundTint="@color/ungu"
-                         android:id="@+id/donasi">
+                         android:textColor="@color/tulisan"
+                         android:text="Pengaturan"
+                         android:id="@+id/pengaturan" />
 
-                        <ImageView
-                             android:layout_height="30dp"
-                             android:layout_width="30dp"
-                             android:src="@drawable/uang"
-                             android:layout_margin="10dp" />
-
-                        <TextView
-                             android:layout_height="wrap_content"
-                             android:layout_width="wrap_content"
-                             android:textSize="14sp"
-                             android:textColor="@color/tulisan"
-                             android:textStyle="italic"
-                             android:text="Donasi" />
-
-                    </LinearLayout>
+                    <TextView
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"
+                         android:background="@drawable/bg_kotak"
+                         android:layout_margin="10dp"
+                         android:padding="10dp"
+                         android:textSize="16sp"
+                         android:backgroundTint="@color/ungu"
+                         android:textColor="@color/tulisan"
+                         android:text="Informasi Perangkat"
+                         android:id="@+id/perangkat" />
 
                 </LinearLayout>
 
