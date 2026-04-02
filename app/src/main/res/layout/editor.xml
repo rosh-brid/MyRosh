@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:background="@color/bg"
+     android:id="@+id/pusat">
+
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="match_parent"
+         android:orientation="vertical">
+
+        <LinearLayout
+             android:layout_height="40dp"
+             android:layout_width="match_parent"
+             android:gravity="center_vertical"
+             android:background="@color/biru">
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="40dp"
+                 android:src="@drawable/nav"
+                 android:layout_marginStart="10dp"
+                 android:id="@+id/nav" />
+
+            <ImageView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:layout_marginEnd="30dp"
+                 android:src="@drawable/salin"
+                 android:id="@+id/simpan" />
+
+            <TextView
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textColor="@color/tulisan"
+                 android:id="@+id/nama"
+                 android:textStyle="bold"
+                 android:text="Nama File" />
+
+        </LinearLayout>
+
+        <io.github.rosemoe.sora.widget.CodeEditor
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp"
+             android:textSize="14sp"
+             android:textColor="@color/tulisan"
+             android:id="@+id/tulis" />
+
+    </LinearLayout>
+
+    <LinearLayout
+         android:layout_height="match_parent"
+         android:layout_width="300dp"
+         android:background="@color/biru"
+         android:orientation="vertical"
+         android:layout_gravity="start">
+
+        <FrameLayout
+             android:layout_height="40dp"
+             android:layout_width="match_parent">
+
+            <TextView
+                 android:layout_height="30dp"
+                 android:layout_width="30dp"
+                 android:gravity="center"
+                 android:background="@drawable/bg_kotak"
+                 android:backgroundTint="#ff0000"
+                 android:layout_marginStart="10dp"
+                 android:layout_gravity="center_vertical"
+                 android:id="@+id/keluar"
+                 android:text="X" />
+
+        </FrameLayout>
+
+        <LinearLayout
+             android:layout_height="match_parent"
+             android:layout_width="match_parent"
+             android:layout_margin="10dp">
+
+            <LinearLayout
+                 android:layout_height="match_parent"
+                 android:layout_width="40dp"
+                 android:background="@drawable/bg_kotak"
+                 android:gravity="center_horizontal"
+                 android:layout_margin="5dp"
+                 android:backgroundTint="@color/ungu">
+
+                <ImageView
+                     android:layout_height="30dp"
+                     android:layout_width="30dp"
+                     android:layout_marginBottom="10dp"
+                     android:src="@drawable/folder"
+                     android:layout_marginTop="10dp"
+                     android:id="@+id/file" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                 android:layout_height="match_parent"
+                 android:layout_width="match_parent"
+                 android:layout_margin="5dp"
+                 android:id="@+id/tempat">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
